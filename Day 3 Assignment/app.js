@@ -39,13 +39,12 @@ function showWord(scCt, ctWordCount) {
     score.textContent = `score: ${scCt}`
 }
 
-submitBtn.addEventListener('keypress', function () {
+submitBtn.addEventListener('click', function () {
     if (inputValue.value.toLowerCase() === words[correctWordCount].correct.toLowerCase()) {
         scoreCt++;
         console.log(`score count ${scoreCt}`);
     }
-    showWord(scoreCt, correctWordCount);
-    if (correctWordCount <= words.length-1) {
+    if (correctWordCount == words.length-1) {
         alert(`You win Your Score:${scoreCt}`)
         location.reload();
     }
